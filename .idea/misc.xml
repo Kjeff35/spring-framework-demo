@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/example-pojo-java-beans-spring-beans/pom.xml" />
+        <option value="$PROJECT_DIR$/example-1-pojo-java-beans-spring-beans/pom.xml" />
+        <option value="$PROJECT_DIR$/example-2-spring-beans/pom.xml" />
+        <option value="$PROJECT_DIR$/example-2-spring-beans-xml/pom.xml" />
+        <option value="$PROJECT_DIR$/example-3-spring-beans-java-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/example-3-spring-beans-java-and-annotation-configuration/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

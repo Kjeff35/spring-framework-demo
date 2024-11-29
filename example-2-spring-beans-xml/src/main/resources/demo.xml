@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definition for Engine -->
+    <!-- Setter injection -->
+    <bean id="engine" class="org.example.automobile.parts.Engine">
+        <property name="type" value="V8" />
+        <property name="specifications">
+            <map>
+                <entry key="Horsepower" value="450" />
+                <entry key="Torque" value="400Nm" />
+                <entry key="FuelType" value="Gasoline" />
+            </map>
+        </property>
+    </bean>
+
+
+    <!-- Bean definition for SoundSystem -->
+    <!-- Setter injection with p-namespace  -->
+    <bean id="soundSystem" class="org.example.automobile.parts.SoundSystem" p:brand="Bose">
+        <property name="audioModes">
+            <list>
+                <value>Surround</value>
+                <value>Stereo</value>
+                <value>Bass Boost</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Bean definition for Tire -->
+    <!-- constructor injection using index -->
+    <bean name="tire"  class="org.example.automobile.parts.Tire">
+        <constructor-arg index="0" value="Michelin" />
+        <constructor-arg index="1" value="18" />
+    </bean>
+
+
+    <!-- Bean definition for Car with multiple dependencies -->
+    <!-- constructor injection and setter injection -->
+    <bean id="car" class="org.example.automobile.Car" scope="prototype" p:make="Tesla" p:model="Model S">
+        <property name="year" value="2024" />
+        <property name="features">
+            <set>
+                <value>Sunroof</value>
+                <value>Autopilot</value>
+                <value>Heated Seats</value>
+            </set>
+        </property>
+        <property name="engine" ref="engine" />
+        <constructor-arg name="tire" ref="tire" />
+        <constructor-arg index="1" ref="soundSystem" />
+    </bean>
+</beans>
