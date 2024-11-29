@@ -5,7 +5,6 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Bean definition for Engine -->
-    <!-- Setter injection -->
     <bean id="engine" class="org.example.automobile.Engine">
         <property name="type" value="V8" />
         <property name="specifications">
@@ -19,7 +18,6 @@
 
 
     <!-- Bean definition for SoundSystem -->
-    <!-- Setter injection with p-namespace  -->
     <bean id="soundSystem" class="org.example.automobile.SoundSystem" p:brand="Bose">
         <property name="audioModes">
             <list>
@@ -31,7 +29,6 @@
     </bean>
 
     <!-- Bean definition for Tire -->
-    <!-- constructor injection using index -->
     <bean name="tire"  class="org.example.automobile.Tire">
         <constructor-arg index="0" value="Michelin" />
         <constructor-arg index="1" value="18" />
