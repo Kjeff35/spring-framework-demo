@@ -1,12 +1,12 @@
 package org.example;
 
-import org.example.automobile.services.CarBuilder;
-import org.example.automobile.services.CarRepairType;
-import org.example.automobile.services.CarRepairer;
-import org.example.automobile.services.impl.repairer.AmateurCarRepairer;
-import org.example.automobile.services.impl.repairer.ProfessionalCarRepairer;
-import org.example.automobile.services.impl.repairs.EngineRepair;
-import org.example.automobile.services.impl.repairs.TireRepair;
+import org.example.config.AnnotationBasedConfiguration;
+import org.example.config.JavaBasedAnnotationConfiguration;
+import org.example.automobile.CarBuilder;
+import org.example.services.CarRepairType;
+import org.example.services.CarRepairer;
+import org.example.services.impl.repairer.ProfessionalCarRepairer;
+import org.example.services.impl.repairs.EngineRepair;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Create ApplicationContext with the configuration class
-        ApplicationContext context = new AnnotationConfigApplicationContext(org.example.automobile.AutomobileConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(JavaBasedAnnotationConfiguration.class, AnnotationBasedConfiguration.class);
 
         // Retrieve CarBuilder bean from context
         CarBuilder car = context.getBean(CarBuilder.class);
